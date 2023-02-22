@@ -1,0 +1,76 @@
+.roboto-700 {
+  font-family: "Roboto", sans-serif;
+}
+
+.login {
+  /* background: blue !important; */
+  width: 100% !important;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  padding: 0px !important;
+  font-family: "Roboto", sans-serif !important;
+}
+
+.login--side-image {
+  width: 50vw;
+  min-width: 500px;
+}
+
+.login--content {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.temp {
+  margin-bottom: auto;
+}
+
+.login--card {
+  padding: 20px !important;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  max-width: 340px;
+  gap: 20px;
+}
+
+.login--card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.remember-me {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2c5282 !important;
+  cursor: pointer;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  max-width: 340px;
+  gap: 5px;
+  align-items: center;
+  color: #616161;
+}

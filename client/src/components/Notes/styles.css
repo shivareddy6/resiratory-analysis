@@ -1,0 +1,16 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.add-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.add-notes--form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
