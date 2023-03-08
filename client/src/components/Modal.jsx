@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function TransitionsModal({ open, handleClose, children }) {
+export default function CustomModel({ open, handleClose, children }) {
   return (
     <div>
       <Modal

@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, createTheme, TextField, ThemeProvider } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../auth/AuthProvider";
 import nodemailer from "nodemailer";
@@ -7,6 +7,8 @@ import { generateOTP } from "../utils/generalUtils";
 import Modal from "./Modal";
 import AddNotes from "./Notes/AddNotes";
 import UpdateNotes from "./Notes/UpdateNotes";
+// import { createTheme, ThemeProvider } from "@mui/system";
+import { orange, red } from "@mui/material/colors";
 
 function Testing() {
   const [first, setFirst] = useState("");
@@ -47,9 +49,24 @@ function Testing() {
   const handleSubmit = async () => {
     setBoolState(true);
   };
+
+  let theme = createTheme({
+    palette: {
+      primary: {
+        main: orange[500],
+      },
+    },
+  });
+
   return (
     <>
-      <TextField
+      <ThemeProvider theme={theme}>
+        <Button 
+         variant="contained">
+          Submit
+        </Button>
+      </ThemeProvider>
+      {/* <TextField
         value={first}
         onChange={(e) => setFirst(e.target.value)}
       ></TextField>
@@ -71,7 +88,7 @@ function Testing() {
             body: "body",
           }}
         />
-      </Modal>
+      </Modal> */}
     </>
   );
 }

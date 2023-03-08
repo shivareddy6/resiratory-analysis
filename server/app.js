@@ -2,6 +2,7 @@ const express = require("express");
 require("./database/db");
 const User = require("./database/user_db");
 const Notes = require("./database/notes_db");
+const Students = require("./database/student_db");
 const cors = require("cors");
 const { sendOtpToMobileNumber } = require("./utils/firebaseUtils");
 const nodemailer = require("nodemailer");
@@ -125,6 +126,40 @@ app.delete("/note/:id", (req, res) => {
   Notes.findByIdAndDelete(req.params.id)
     .then((mes) => res.send(mes))
     .catch((err) => res.send(err));
+});
+
+app.get("/students", (req, res) => {
+  Students.find({})
+    .then((allStudents) => res.send(allStudents))
+    .catch((err) => res.send({ error: err }));
+});
+
+app.post("/students", (req, res) => {
+  // console.log("post", req.body);
+  Students.create(req.body)
+    .then((data) => res.send(data))
+    .catch((err) => res.send({ error: err }));
+});
+
+app.get("/students", (req, res) => {
+  // console.log("get", req.body);
+  Students.findOne({ _id: req.body._id })
+    .then((student) => res.send(student))
+    .catch((err) => res.send({ error: err }));
+});
+
+app.put("/students", (req, res) => {
+  // console.log("put", req.body);
+  Students.findByIdAndUpdate({ _id: req.body._id }, req.body)
+    .then((student) => res.send(student))
+    .catch((err) => res.send({ error: err }));
+});
+
+app.delete("/students", (req, res) => {
+  console.log("delete", req.body);
+  Students.findByIdAndDelete(req.body._id)
+    .then((result) => res.send(result))
+    .catch((err) => res.send({ error: err }));
 });
 
 const PORT = 3001;

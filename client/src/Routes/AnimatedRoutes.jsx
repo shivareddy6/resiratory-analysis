@@ -7,6 +7,8 @@ import PrivateRoute from "./PrivateRoute";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion/dist/framer-motion";
 import Notes from "../components/Notes/Notes";
+import Students from "../components/Students/Students";
+import NavText from "../components/NavText";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -28,6 +30,8 @@ function AnimatedRoutes() {
 
         <Route path="/notes" element={<Notes />} />
         <Route path="/testing" element={<Testing />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/lax" element={<NavText />} />
       </Routes>
     </AnimatePresence>
   );
